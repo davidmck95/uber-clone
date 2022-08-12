@@ -2,7 +2,7 @@ import { StyleSheet, View, SafeAreaView, Image } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
 import NavOptions from '../components/NavOptions'
-import { GOOGLE_MAPS_APIKEY } from '@env'
+import { GOOGLE_MAPS_API_KEY } from '@env'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { useDispatch } from 'react-redux'
 import { setOrigin, setDestination } from '../slices/navSlice'
@@ -28,7 +28,7 @@ const HomeScreen = () => {
                 nearbyPlacesAPI='GooglePlacesSearch'
                 debounce={400}
                 query={{
-                    key: GOOGLE_MAPS_APIKEY,
+                    key: GOOGLE_MAPS_API_KEY,
                     language: 'en'
                 }}
                 fetchDetails={true}

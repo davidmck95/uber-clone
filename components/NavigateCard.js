@@ -1,7 +1,7 @@
 import { StyleSheet, Text, SafeAreaView, View } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
-import { GOOGLE_MAPS_APIKEY } from '@env'
+import { GOOGLE_MAPS_API_KEY } from '@env'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { setDestination } from '../slices/navSlice'
 import { useDispatch } from 'react-redux'
@@ -38,7 +38,7 @@ const NavigateCard = () => {
                             navigation.navigate('RideOptionsCard');
                         }}
                         query={{
-                            key: GOOGLE_MAPS_APIKEY,
+                            key: GOOGLE_MAPS_API_KEY,
                             language: 'en'
                         }}
                         nearbyPlacesApi='GooglePlacesSearch'
