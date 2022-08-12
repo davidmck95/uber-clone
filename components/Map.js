@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
 import tw from 'twrnc'
 import MapView, { Marker } from 'react-native-maps';
@@ -10,9 +10,28 @@ import { GOOGLE_MAPS_API_KEY } from '@env'
 function Map() {
     const origin = useSelector(selectOrigin)
     const destination = useSelector(selectDestination)
+    const mapRef = useRef(null);
+
+    const markerEdgePadding = 50;
+    const fitToSuppliedMarkersOptions = {
+        edgePadding: {
+            top: markerEdgePadding, 
+            right: markerEdgePadding, 
+            bottom: markerEdgePadding, 
+            left: markerEdgePadding
+        }
+    }
+
+    useEffect(() => {
+        if (!origin || !destination) return;
+
+        mapRef.current.fitToSuppliedMarkers(['origin', 'destination'], fitToSuppliedMarkersOptions);
+
+    }, [origin, destination])
 
     return (
         <MapView
+            ref={mapRef}
             style={tw`flex-1`}
             mapType='mutedStandard'
             initialRegion={{
@@ -40,6 +59,17 @@ function Map() {
                     title='Origin'
                     description={origin.description}
                     identifier='origin'
+                />
+            )}
+            {destination?.location && (
+                <Marker
+                    coordinate={{
+                        latitude: destination.location?.lat ?? 0,
+                        longitude: destination.location?.lng ?? 0
+                    }}
+                    title='Destination'
+                    description={origin.description}
+                    identifier='destination'
                 />
             )}
         </MapView>
