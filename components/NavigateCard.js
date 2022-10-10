@@ -21,7 +21,7 @@ const NavigateCard = () => {
             <Text
                 style={tw`text-center py-5 text-xl`}  
             >
-                Good morning, Dee
+                Good morning starshine, the earth says "Hello!"
             </Text>
             <View
                 style={tw`border-5 border-gray-200 flex-shrink`}
@@ -57,7 +57,7 @@ const NavigateCard = () => {
                         <Icon name='car' type='font-awesome' color='white' size={16}/>
                         <Text style={tw`text-white text-center`}>Rides</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}
                     >
                         <Icon name='fast-food-outline' type='ionicon' color='black' size={16}/>

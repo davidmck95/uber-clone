@@ -1,7 +1,7 @@
 import { FlatList, TouchableOpacity, Image, Text, View } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
-import { Icon } from '@rneui/base'
+import { Icon } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 const data = [

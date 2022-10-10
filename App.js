@@ -8,6 +8,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'intl';
+import 'intl/locale-data/jsonp/en-US.js';
 
 export default function App() {
   const Stack = createStackNavigator();
