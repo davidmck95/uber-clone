@@ -26,7 +26,9 @@ function Map() {
     useEffect(() => {
         if (!origin || !destination) return;
 
-        mapRef.current.fitToSuppliedMarkers(['origin', 'destination'], fitToSuppliedMarkersOptions);
+        setTimeout(() => {
+            mapRef.current.fitToSuppliedMarkers(['origin', 'destination'], fitToSuppliedMarkersOptions, false);
+        }, 1000)
 
     }, [origin, destination])
 

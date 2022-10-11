@@ -19,9 +19,9 @@ const NavigateCard = () => {
             style={tw`bg-white flex-1`}
         >
             <Text
-                style={tw`text-center py-5 text-xl`}  
+                style={tw`text-center py-5 text-lg`}  
             >
-                Good morning starshine, the earth says "Hello!"
+                Good morning Dee!
             </Text>
             <View
                 style={tw`border-5 border-gray-200 flex-shrink`}
